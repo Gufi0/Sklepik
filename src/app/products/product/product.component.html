@@ -1,0 +1,7 @@
+<!-- product.component.html -->
+<div class="product">
+  <img [src]="product.image" [alt]="product.name" />
+  <h3>{{ product.name }}</h3>
+  <p>Price: ${{ product.price }}</p>
+  <button (click)="onBuy()">Buy</button>
+</div>
