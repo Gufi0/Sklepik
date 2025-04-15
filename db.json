@@ -1,0 +1,18 @@
+{
+  "products": [
+    { "name": "Bread", "price": 15, "image": "zdj.jpg" },
+    { "name": "Butter", "price": 20, "image": "zdj.jpg" },
+    { "name": "Sausages", "price": 35, "image": "zdj.jpg" },
+    { "name": "Eggs", "price": 10, "image": "zdj.jpg" },
+    { "name": "Pork", "price": 150, "image": "zdj.jpg" },
+    { "name": "Mutton", "price": 200, "image": "zdj.jpg" },
+    { "name": "Beef", "price": 175, "image": "zdj.jpg" },
+    { "name": "Sushi", "price": 500, "image": "zdj.jpg" },
+    { "name": "Pizza", "price": 60, "image": "zdj.jpg" },
+    { "name": "Water", "price": 5, "image": "zdj.jpg" },
+    { "name": "Redbull", "price": 11, "image": "zdj.jpg" },
+    { "name": "Beer", "price": 25, "image": "zdj.jpg" },
+    { "name": "Vodka", "price": 50, "image": "zdj.jpg" },
+    { "name": "Whisky", "price": 140, "image": "zdj.jpg" }
+  ]
+}

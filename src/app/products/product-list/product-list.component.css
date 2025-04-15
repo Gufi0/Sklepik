@@ -1,0 +1,16 @@
+/* src/app/products/product-list/product-list.component.css */
+.products-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-direction: row; /* Arrange items in a row */
+  gap: 16px; /* Add spacing between items */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.product-item {
+  flex: 0 0 auto; /* Prevent items from shrinking */
+  border: 1px solid #ccc;
+  padding: 16px;
+  text-align: center;
+  width: 200px; /* Set a fixed width for each product */
+}
