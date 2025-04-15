@@ -1,13 +1,14 @@
+// src/app/products/product/product.component.ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html',
   standalone: true,
+  templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  @Input() product!: { name: string; image: string; price: number }; // Fixed TS2564
+  @Input() product: any; // Replace `any` with a proper type if available
   @Output() buy = new EventEmitter<void>();
 
   onBuy() {

@@ -1,0 +1,5 @@
+/* app.component.css */
+.content {
+  margin: 2rem 0;
+  padding-bottom: 3rem; /* To avoid overlap with the footer */
+}
