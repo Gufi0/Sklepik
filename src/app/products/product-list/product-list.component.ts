@@ -1,21 +1,20 @@
-// src/app/products/product-list/product-list.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForOf } from '@angular/common';
-import {CartComponent} from '../../cart/cart.component';
+import { CartService } from '../../Services/CartService'; // Import serwisu
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [NgForOf, CartComponent],
+  imports: [NgForOf],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  @Output() cartUpdated = new EventEmitter<any[]>();
   products: any[] = [];
-  cart: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cartService: CartService) {} // Wstrzyknięcie serwisu
 
   ngOnInit(): void {
     this.fetchProducts();
@@ -33,6 +32,6 @@ export class ProductListComponent implements OnInit {
   }
 
   onBuy(product: any): void {
-    this.cart.push(product);
+    this.cartService.addToCart(product); // Użycie serwisu
   }
 }

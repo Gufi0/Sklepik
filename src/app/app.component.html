@@ -1,11 +1,25 @@
 <app-header></app-header>
 <nav class="navbar bg-primary">
   <div class="container-fluid d-flex justify-content-center">
-  <a class="navbar-brand" routerLink="/products" style="cursor: pointer">Products</a>
-    <a class="btn btn-light" routerLink="/cart" style="cursor: pointer">Cart</a>
+    <a class="navbar-brand" routerLink="/products" style="cursor: pointer">Products</a>
+    <button class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" style="cursor: pointer">Cart</button>
   </div>
 </nav>
 <div class="content container mt-4">
-  <router-outlet></router-outlet>
+  <app-product-list (cartUpdated)="updateCart(cart)"></app-product-list>
 </div>
 <app-footer></app-footer>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartOffcanvasLabel">Your Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul>
+      <li *ngFor="let item of cart">{{ item.name }} - {{ item.price }} zł</li>
+    </ul>
+    <p *ngIf="cart.length === 0">Koszyk jest pusty.</p>
+  </div>
+</div>

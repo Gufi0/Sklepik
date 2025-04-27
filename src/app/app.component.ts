@@ -13,4 +13,9 @@ import {RouterOutlet} from '@angular/router';
 })
 export class AppComponent {
   title = 'Sklepik';
+  cart: any[] = [];
+
+  updateCart(newCart: any[]): void {
+    this.cart = [...newCart];
+  }
 }

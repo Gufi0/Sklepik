@@ -1,6 +1,16 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
-  { path: 'products', loadComponent: () => import('./products/product-list/product-list.component').then(m => m.ProductListComponent) },
-  { path: 'cart', loadComponent: () => import('./cart/cart.component').then(m => m.CartComponent) },
+  { path: 'products', component: ProductListComponent },
+  { path: 'cart', component: CartComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
