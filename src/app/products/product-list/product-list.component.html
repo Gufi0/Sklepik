@@ -1,8 +1,9 @@
-<div class="products-container d-flex flex-column gap-3">
-  <div *ngFor="let product of products" class="product-item border p-3 text-center ">
+<div class="products-container d-flex flex-row flex-wrap gap-3">
+  <div *ngFor="let product of products" class="product-item border p-3 text-center">
     <img [src]="product.image" alt="{{ product.name }}" class="img-fluid mb-2" style="max-width: 100px;" />
     <h3>{{ product.name }}</h3>
     <p>Price: {{ product.price }}$</p>
     <button class="btn btn-primary" (click)="onBuy(product.name)">Buy</button>
   </div>
 </div>
+<app-cart [cart]="cart"></app-cart>

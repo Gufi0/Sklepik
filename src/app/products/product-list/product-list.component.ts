@@ -2,17 +2,18 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForOf } from '@angular/common';
-import { ProductComponent } from '../product/product.component';
+import {CartComponent} from '../../cart/cart.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductComponent, NgForOf],
+  imports: [NgForOf, CartComponent],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
   products: any[] = [];
+  cart: any[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -31,7 +32,7 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  onBuy(productName: string): void {
-    console.log(`${productName} was bought!`);
+  onBuy(product: any): void {
+    this.cart.push(product);
   }
 }
