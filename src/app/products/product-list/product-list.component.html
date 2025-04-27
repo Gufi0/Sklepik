@@ -3,6 +3,6 @@
     <img [src]="product.image" alt="{{ product.name }}" class="img-fluid mb-2" style="max-width: 100px;" />
     <h3>{{ product.name }}</h3>
     <p>Price: {{ product.price }}$</p>
-    <button class="btn btn-primary" (click)="onBuy(product)">Buy</button>
+    <button class="btn btn-primary" (click)="addToCart(product)">Buy</button>
   </div>
 </div>

@@ -1,16 +1,28 @@
 import { Injectable } from '@angular/core';
+import { IProduct } from '../Interface/IProduct';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CartService {
-  private cart: any[] = [];
+  private cart: IProduct[] = [];
 
-  getCart(): any[] {
+  addToCart(product: IProduct): void {
+    this.cart.push(product);
+  }
+
+    getCart(): IProduct[] {
     return this.cart;
   }
 
-  addToCart(product: any): void {
-    this.cart.push(product);
+  removeFromCart(product: IProduct): void {
+    const index = this.cart.indexOf(product);
+    if (index > -1) {
+      this.cart.splice(index, 1);
+    }
+  }
+
+  clearCart(): void {
+    this.cart = [];
   }
 }
